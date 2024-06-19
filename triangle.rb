@@ -14,6 +14,15 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  if a <= 0 || b <= 0 || c <= 0
+    raise TriangleError, "Some of triangle sides equal or below 0"
+  end
+
+  x, y, z = [a, b, c].sort
+  if x + y <= z
+    raise TriangleError, "Wrong triangle"
+  end
+
   triangle_kinds = {1 => :equilateral, 2 => :isosceles, 3 => :scalene}
   number = [a,b,c].uniq.size
   return triangle_kinds[number]
