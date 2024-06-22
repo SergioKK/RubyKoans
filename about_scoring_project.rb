@@ -60,11 +60,10 @@ def score(dice)
       end
     end
   end
-  # puts dice_hash
-  score
-end
 
-puts score([1,5,5,1,1,1,1])
+  score
+  
+end
 
 class AboutScoringProject < Neo::Koan
   def test_score_of_an_empty_list_is_zero
